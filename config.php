@@ -3,9 +3,9 @@
  * Database config variables
  */
 define("DB_HOST", "localhost");
-define("DB_USER", "");
-define("DB_PASSWORD", "");
-define("DB_DATABASE", "");
+define("DB_USER", "YOURMYSQLUSERNAME");
+define("DB_PASSWORD", "YOURMYSQLPASSWORD");
+define("DB_DATABASE", "YOURGCMDATABASE");
 
 /*
  * Google API Key
