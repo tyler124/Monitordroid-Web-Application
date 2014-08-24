@@ -56,12 +56,8 @@
     <?php
 	
     // receive data from HTML readcalllog request
-	if (!isset($_POST['registration']) && !isset($_POST['rowid'])) {
-	header("location:index.php");
-	exit();		
-	}
 	$rName=$_POST["registration"];
-    $rowId=$_POST["rowid"];
+    	$rowId=$_POST["rowid"];
 
 
 
