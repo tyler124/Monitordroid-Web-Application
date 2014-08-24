@@ -56,17 +56,9 @@
     <?php
 
     // receive data from HTML readsms request
-	
-	if (!isset($_POST['registration']) && !isset($_POST['rowid'])) {
-	header("location:index.php");
-	exit();		
-	}
-
 	$rName=$_POST["registration"];
 	$rowId=$_POST["rowid"];
 	
-
-
 	include_once './db_functions.php';
 
 	$db = new DB_Functions();
@@ -81,11 +73,8 @@
     <?php
 
 	$smslist = $db->getSMSSent($rName);
-
 	echo nl2br($smslist);   
-                       
-
-    ?>
+     ?>
 
 </body>
 
