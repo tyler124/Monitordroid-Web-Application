@@ -60,7 +60,7 @@
 
 	*Written by: Tyler Butler
 
-	*Email: butler.tyler.355@gmail.com
+	*Email: tyler@monitordroid.com
 
 	*Purpose: Display saved contact information from the database in the web application
 
@@ -70,14 +70,8 @@
 
     // receive data from HTML Contacts request
 	
-	if (!isset($_POST['registration']) && !isset($_POST['rowid'])) {
-	header("location:index.php");
-	exit();		
-	}
-
 	$rName=$_POST["registration"];
-    $rowId=$_POST["rowid"];
-
+    	$rowId=$_POST["rowid"];
 
 	include_once './db_functions.php';
 
@@ -95,12 +89,7 @@
 	$ContactList = $db->getContacts($rName);
 
 	echo nl2br($ContactList);        
-                 
-
-    ?>
-
-
-
+     ?>
 </body>
 
 </html>
