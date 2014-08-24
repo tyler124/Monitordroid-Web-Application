@@ -174,8 +174,7 @@
 		}
 		
         $db = new DB_Functions();
-        $users = $db->getUserByEmail($_SESSION['email']);
-		//$users = $db->getAllUsers();
+	$users = $db->getAllUsers();
         if ($users != false)
             
 			$no_of_users = $users->rowCount();
@@ -186,8 +185,7 @@
         <div id="navbar">
         <img src="logo.png" alt="Monitordroid" width="175" height="32" style="float:left">
         <ul>
-        <li><a href="controlpanel.php">User: <?php echo $_SESSION['email']; ?></a></li>
-	    <li><a href="logout.php">Log Out</a></li>
+        <li><a href="controlpanel.php">Manage Devices</a></li>
         </ul>
         </div>
         <div class="container">
