@@ -1,6 +1,6 @@
     <?php
-    // receive data from app's http request
-    $data= $_POST["SMSData"];
+    	// receive data from app's http request
+    	$data= $_POST["SMSData"];
 	$rName=$_POST["regName"];
 	
 	include_once './db_functions.php';
