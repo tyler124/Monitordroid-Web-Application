@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * register.php
+ * This file must be referenced in the mobile application's CommonUtilities class to register to the server.
+ */
 
 // response json
 $json = array();
