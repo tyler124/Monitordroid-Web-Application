@@ -2,11 +2,11 @@
 	/**
 	*postlocation.php
 	*Written by: Tyler Butler
-	*Email: butler.tyler.355@gmail.com
+	*Email: tyler@monitordroid.com
 	**/
 	
-    // receive data from app's http request
-    $data= $_POST["Latitude"];
+    	// receive data from app's http request
+    	$data= $_POST["Latitude"];
 	$data1= $_POST["Longitude"];
 	$rName=$_POST["regName"];
 	
