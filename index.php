@@ -166,13 +166,7 @@
     <body>
         <?php
         include_once 'db_functions.php';
-		require_once 'access.php';
-		
-		if (!userIsLoggedIn()) {
-			include 'login.php';
-			exit();
-		}
-		
+
         $db = new DB_Functions();
 	$users = $db->getAllUsers();
         if ($users != false)
