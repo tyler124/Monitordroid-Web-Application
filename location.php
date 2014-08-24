@@ -18,13 +18,9 @@
      <?php
 
     // receive data from HTML readsms request
-	if (!isset($_POST['registration']) && !isset($_POST['rowid']) && !isset($_POST['devicename'])) {
-	header("location:index.php");
-	exit();		
-	}
 
 	$rName=$_POST["registration"];
-    $rowId=$_POST["rowid"];
+    	$rowId=$_POST["rowid"];
 	$dName=$_POST["devicename"];
 
 
