@@ -11,7 +11,7 @@ class DB_Functions {
 		
 		// connecting to mysql
 		try {
-			$this->db = new PDO('mysql:host=localhost;dbname=monitot5_gcm', DB_USER, DB_PASSWORD);
+			$this->db = new PDO('mysql:host=localhost;dbname=YOURGCMDATABASENAME', DB_USER, DB_PASSWORD);
 		}
 		catch (PDOException $e) {
 			$output = 'Unable to connect to database server.' .
@@ -287,56 +287,7 @@ function __destruct() {
 		
 		return $result;
 		}
-
 	
-
-	public function accountExists($email, $password) {
-
-		try {
-
-			$sql = 'SELECT COUNT(*) FROM gcm_accounts WHERE email = :email AND password = :password';
-			$s = $this->db->prepare($sql);
-			$s->bindParam(':email', $email);
-			$s->bindParam(':password', $password);
-			$s->execute();
-		}
-
-		catch (PDOException $e) {
-				$output = 'Error fetching account: ' . $e->getMessage();
-		}
-
-		$row = $s->fetch();
-
-		if ($row[0] > 0) {
-			return TRUE;
-		}
-		else {
-			return FALSE;
-		}
-	}
-	
-	public function accountEmailExists($email) {
-
-		try {
-
-			$sql = 'SELECT COUNT(*) FROM gcm_accounts WHERE email = :email';
-			$s = $this->db->prepare($sql);
-			$s->bindParam(':email', $email);
-			$s->execute();
-		}
-
-		catch (PDOException $e) {
-				$output = 'Error fetching account: ' . $e->getMessage();
-		}
-		$row = $s->fetch();
-
-		if ($row[0] > 0) {
-			return TRUE;
-		}
-		else {
-			return FALSE;
-		}
-	}
 	
 	public function deleteDevice($rowId) {
 		try {
@@ -350,30 +301,6 @@ function __destruct() {
 		
 	}
 	
-	public function changePassword($email, $newpass) {
-		try {
-			$sql = "UPDATE gcm_accounts SET password = :newpass WHERE email = '$email'";
-			$s = $this->db->prepare($sql);
-			$s->bindParam(':newpass', $newpass);
-			$s->execute();
-		}
-		catch (PDOException $e) {
-		}
-	}
-	
-	public function addAccount($accountName, $newpass) {
-		try {
-			$sql = "INSERT INTO gcm_accounts(email, password, created_at) VALUES('$accountName', '$newpass', NOW())";
-			$s = $this->db->prepare($sql);
-			//$s->bindParam(':email', $accountName);
-			//$s->bindParam(':password', $newpass);
-			//$s->bindParam(':created_at', NOW());
-			$s->execute();
-		}
-		catch (PDOException $e) {
-			
-		}
-	}
 
 }
 
