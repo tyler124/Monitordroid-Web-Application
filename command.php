@@ -57,8 +57,8 @@
     // receive data from HTML Contacts request
 
 	$rName=$_POST["registration"];
-    $rowId=$_POST["rowid"];
-	require_once 'access.php';
+    	$rowId=$_POST["rowid"];
+
 	
 
 	include_once './db_functions.php';
