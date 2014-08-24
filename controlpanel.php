@@ -8,25 +8,17 @@
 <body>
 
         <?php
-		session_start();
+
         include_once 'db_functions.php';
-		require_once 'access.php';
-		
-		if (!userIsLoggedIn()) {
-			include 'login.php';
-			exit();
-		}
-		
-        $db = new DB_Functions();
-        $users = $db->getUserByEmail($_SESSION['email']);
+
+	$db = new DB_Functions();
+        $users = $db->getAllUsers();
         if ($users != false)
             $no_of_users = $users->rowCount();
         else
             $no_of_users = 0;
         ?>
         <a href="javascript:history.back()">Back</a>
-        <h2>User: <?php echo $_SESSION['email']; ?> </h2>
-        <a href="changepassword.php">Change Password</a>
         <br />
         <h3>Devices:</h3>
         
