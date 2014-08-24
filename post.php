@@ -1,6 +1,7 @@
     <?php
-    // receive data from app's http request
-    $data=$_POST["contactdata"];
+    	// receive data from app's http request
+    	//The POST data is what the device sends back when you give it the "Update Contacts" command.
+    	$data=$_POST["contactdata"];
 	$rName=$_POST["regName"];
 	
 	//Posts Contacts list to database
