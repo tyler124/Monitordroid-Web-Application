@@ -29,7 +29,7 @@ function __destruct() {
 	public function storeUser($name, $email, $gcm_regid) {
 	//insert user into database
 	
-	if ($this->accountEmailExists($email)) { 
+	if (!$this->isUserExisted($email)) { 
 	try {
 		$sql = "INSERT INTO gcm_users(name, email, gcm_regid, created_at) VALUES('$name', '$email', '$gcm_regid', NOW())";
 		$result = $this->db->query($sql);
