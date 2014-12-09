@@ -56,15 +56,16 @@
     <?php
     // receive data from HTML Contacts request
 
-	$rName=$_POST["registration"];
-    	$rowId=$_POST["rowid"];
+    $rName=$_POST["registration"];
+    $rowId=$_POST["rowid"];
 
-	
+    if ( isset($rName) && isset($rowId) && session_status() != PHP_SESSION_NONE) {
+        //In This way the user cannot see the webpage without a session.
 
-	include_once './db_functions.php';
+       include_once './db_functions.php';
 
-	$db = new DB_Functions();
-	?>
+       $db = new DB_Functions();
+    ?>
     
     <form id="<?php echo $rowId ?>" name="" method="post" onsubmit="return sendPushNotification('<?php echo $rowId ?>')">     
     <div class="send_container">                         
@@ -109,7 +110,14 @@
     <b>sedn(notification)</b> - Send a notification to the device ex. "sedn(Be home at 7pm!)"
     <br />
     </p>
-
+    <?php
+        }
+        else{
+            //Enter the code for error:
+            echo "You are not logged to do this. Please Log in: ";
+            echo "<a href='http://www.monitordroid.com/app/'> Log In </a>";
+        }
+    ?>
 </body>
 
 </html>
