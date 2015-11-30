@@ -1,0 +1,4 @@
+Header add Access-Control-Allow-Origin "*"
+Header add Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
+# File modified on Thu Jul 23 11:30:39 2015 by server
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
