@@ -3,7 +3,7 @@
 include_once 'db_functions.php'; 
 include_once 'access.php';
 if (!userIsLoggedIn()) {
-  header('Location: ./login.php');
+  header('Location: ./src/login.php');
   exit();
 } ?><!DOCTYPE html>
 <html>
