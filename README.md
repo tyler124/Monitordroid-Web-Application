@@ -1,8 +1,5 @@
 Monitordroid Web Application
 ----------------------------
-Developers:
-Tyler Butler (tyler@monitordroid.com), 
-Noah Lowenthal  (noah@monitordroid.com)
 
 Don't want to go through the stress of setting up your own server? Go to https://monitordroid.com and let us do the work for you! 10-day free trial avaliable. 
 
